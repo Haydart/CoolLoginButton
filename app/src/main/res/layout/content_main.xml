@@ -24,7 +24,11 @@
 
     </android.support.design.widget.TextInputLayout>
 
-
+    <pl.droidsononroids.coolloginbutton.view.LoginButton
+        android:id="@+id/loginButton"
+        android:layout_height="56dp"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"/>
     <!--Miejsce na twój button (wysokość = 56dp)-->
 
 </android.support.design.widget.CoordinatorLayout>

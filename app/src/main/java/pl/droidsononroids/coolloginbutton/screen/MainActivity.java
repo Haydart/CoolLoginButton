@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,20 +29,20 @@ public class MainActivity extends AppCompatActivity {
         mLoginManager.setLoginListener(new LoginManager.LoginListener() {
             @Override
             public void loginSuccess() {
-                Toast.makeText(MainActivity.this, "SUCCESSFUL LOGIN", Toast.LENGTH_SHORT).show();
-                loginButton.displaySuccessAnimation();
+                loginButton.displaySuccessOrFailureAnimation(LoginManager.SUCCESS);
             }
 
             @Override
             public void loginFailure() {
-                Toast.makeText(MainActivity.this, "LOGIN FAILURE", Toast.LENGTH_SHORT).show();
-                loginButton.displayFailureAnimation();
+                loginButton.displaySuccessOrFailureAnimation(LoginManager.FAILURE);
             }
         });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loginButton.swapTextForProgressBar();
+                loginButton.calculateButtonCenter();
                 mLoginManager.performLogin(mEmailEditText.getText().toString().trim());
             }
         });

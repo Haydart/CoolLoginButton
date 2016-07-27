@@ -6,6 +6,8 @@ public class LoginManager {
 
     private LoginListener mLoginListener;
     private static final String CORRECT_LOGIN= "correct";
+    public static final int SUCCESS = 0;
+    public static final int FAILURE = 1;
 
     public void setLoginListener(final LoginListener loginListener) {
         mLoginListener = loginListener;
@@ -18,14 +20,14 @@ public class LoginManager {
                 public void run() {
                     mLoginListener.loginSuccess();
                 }
-            }, 750);
+            }, 2000);
         }else {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     mLoginListener.loginFailure();
                 }
-            }, 800);
+            }, 2000);
         }
     }
 

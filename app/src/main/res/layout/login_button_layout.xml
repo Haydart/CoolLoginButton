@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="56dp"
     android:background="#005eff">
 
     <TextView
@@ -11,8 +11,47 @@
         android:id="@+id/textView"
         android:layout_gravity="center"
         android:textColor="#ffffff"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
-        android:textStyle="bold" />
-</LinearLayout>
+        android:textStyle="bold"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        android:indeterminate="true" />
+
+    <FrameLayout
+        android:id="@+id/failureFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#ff0000"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/errorImageView"
+            android:src="@drawable/ic_warning_white_24dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/successFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#81dd01"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/successImageView"
+            android:src="@drawable/ic_check_white_24dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</FrameLayout>

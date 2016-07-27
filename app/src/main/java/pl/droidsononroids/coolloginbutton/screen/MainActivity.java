@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         mLoginManager.setLoginListener(new LoginManager.LoginListener() {
             @Override
             public void loginSuccess() {
-                //no-op
+
             }
 
             @Override

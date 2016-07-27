@@ -82,9 +82,9 @@ public class LoginButton extends FrameLayout {
             delayAnimator.start();
             (flag == LoginManager.SUCCESS ? successFL : failureFL).setVisibility(VISIBLE);
         }else{
-            Toast.makeText(getContext(), "Too low android!", Toast.LENGTH_SHORT).show();
+            swapProgressBarForText();
+            (flag == LoginManager.SUCCESS ? successFL : failureFL).setVisibility(VISIBLE);
         }
-
     }
 
     public void calculateButtonCenter() {
@@ -92,7 +92,7 @@ public class LoginButton extends FrameLayout {
         centerY = getHeight() / 2;
     }
 
-    public void swapTextForProgressBar() {
+    public void swapTextForProgressBar() { // no time to refactor, should be probably set up against a persisting reference
         findViewById(R.id.signUpTextView).setVisibility(INVISIBLE);
         findViewById(R.id.progressBar).setVisibility(VISIBLE);
     }
@@ -107,7 +107,7 @@ public class LoginButton extends FrameLayout {
         this.setClickable(flag);
     }
 
-    private void hideSuccessOrFailure(final int flag) {
+    private void hideSuccessOrFailure(final int flag) { // launched only when API is at least 21
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

@@ -2,9 +2,11 @@
 <resources>
     <color name="colorPrimary">#191c23</color>
     <color name="colorPrimaryDark">#161920</color>
-    <color name="colorAccent">#0088ef</color>
+    <color name="colorAccent">#ffffff</color>
     <color name="colorBackground">#1d2027</color>
-    <color name="colorError">#d92b26</color>
-    <color name="colorSuccess">#008c7a</color>
+    <color name="colorError">#ff0900</color>
+    <color name="colorSuccess">#00ff3a</color>
+    <color name="colorDefaultLoginButton">#002aff</color>
+    <color name="colorDefaultLoginButtonHighlighed">#4a68ff</color>
 </resources>
 
